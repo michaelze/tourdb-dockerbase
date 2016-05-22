@@ -10,9 +10,6 @@ RUN sed -ir "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/" /etc/locale.gen
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/default/locale
 RUN locale-gen
 
-ADD tourdb.conf /etc/apache2/sites-available/tourdb.conf
-RUN a2dissite default
-RUN a2ensite tourdb.conf
 RUN a2enmod rewrite
 RUN a2enmod expires
 
