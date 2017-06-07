@@ -15,6 +15,7 @@ RUN a2enmod expires
 
 RUN sed -ir "s/variables_order\s*=.*/variables_order = \"EGPCS\"/" /etc/php5/apache2/php.ini
 RUN sed -ir "s/variables_order\s*=.*/variables_order = \"EGPCS\"/" /etc/php5/cli/php.ini
+RUN sed -ir "s/upload_max_filesize\s*=.*/upload_max_filesize = 6M/" /etc/php5/apache2/php.ini
 
 RUN git clone https://github.com/cakephp/cakephp /var/tourdb_cakephp
 RUN cd /var/tourdb_cakephp && git checkout 1.3.11
